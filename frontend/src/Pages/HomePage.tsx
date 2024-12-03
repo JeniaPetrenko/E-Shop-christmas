@@ -1,4 +1,4 @@
-import { Header } from "../Components/Header";
+import { Header } from "../Components/UI/Header";
 import { ItemsList } from "../Components/ItemsList";
 
 export const HomePage = () => {
