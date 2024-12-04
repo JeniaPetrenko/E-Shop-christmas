@@ -1,73 +1,243 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;700&display=swap');
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
-
-  color-scheme: light dark;
-  color: rgba(16, 16, 16, 0.87);
-  background-color: #f2eded;
-
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  --primary-color: #ff1744;
+  /* Основний колір */
+  --secondary-color: #f1c40f;
+  /* Колір акценту */
+  --background-color: #01012e;
+  /* Темний фон */
+  --card-background-color: #151362;
+  /* Колір фону карток */
+  --text-color: #f4f4f4;
+  /* Колір тексту */
+  --button-color: #ff6f00;
+  /* Колір кнопок */
+  --button-hover-color: #ff8f1a;
+  /* Колір кнопок при наведенні */
+  --shadow-color: rgba(0, 0, 0, 0.2);
+  /* Тінь для карток */
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-
-a:hover {
-  color: #535bf2;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
+h1,
+h2,
+h3 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
+main {
+  padding: 2rem;
+}
+
+.hero-section {
+  background-image: url('/images/Christmas.jpg');
+  /* замінити на свою картинку */
+  background-size: cover;
+  background-position: center;
+  text-align: center;
+  padding: 10rem 0;
+  color: white;
+}
+
+.hero-section h1 {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.shop-now-btn {
+  background-color: var(--button-color);
+  color: white;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.2rem;
   cursor: pointer;
-  transition: border-color 0.25s;
+  transition: background-color 0.3s;
 }
 
-button:hover {
-  border-color: #646cff;
+.shop-now-btn:hover {
+  background-color: var(--button-hover-color);
 }
 
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+.products-page {
+  padding: 3rem 0;
 }
 
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  background-color: var(--card-background-color);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.card img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-bottom: 2px solid #333;
+}
+
+.card-body {
+  padding: 1rem;
+  text-align: center;
+}
+
+.card-body h3 {
+  font-size: 1.5rem;
+  color: var(--text-color);
+}
+
+.card-body p {
+  font-size: 1rem;
+  color: #bbb;
+  margin: 0.5rem 0;
+}
+
+.card-body .price {
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  margin: 1rem 0;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 10px var(--shadow-color);
+}
+
+.card-body .btn {
+  background-color: var(--secondary-color);
+  color: white;
+  padding: 0.6rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.card-body .btn:hover {
+  background-color: #e0a800;
+}
+
+.overlay {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  background: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+.details {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  margin: 3rem 0 2rem;
+}
+
+.details img {
+  width: 400px;
+  height: auto;
+  border-radius: 8px;
+  border: solid 1px #fff;
+  object-fit: cover;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.6);
+}
+
+.details-info {
+  text-align: center;
+  padding: 0 1rem;
+}
+
+.details h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: var(--primary-color);
+}
+
+.price {
+  font-weight: bold;
+  font-size: 1.5rem;
+  color: var(--secondary-color);
+  margin-bottom: 1rem;
+}
+
+.category {
+  font-style: italic;
+  color: #96f5f7;
+  margin-bottom: 1rem;
+}
+
+.details-info p {
+  font-size: 1.1rem;
+  line-height: 1.5;
+  color: var(--text-color);
+}
+
+@media (min-width: 768px) {
+  .details {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 3rem;
+    padding: 2rem;
   }
 
-  a:hover {
-    color: #747bff;
+  .details-info {
+    text-align: left;
+  }
+}
+
+/* Адаптивні стилі */
+@media (max-width: 768px) {
+  .hero-section {
+    padding: 6rem 0;
   }
 
-  button {
-    background-color: #f9f9f9;
+  .hero-section h1 {
+    font-size: 2.5rem;
+  }
+
+  .page-title {
+    font-size: 2rem;
+  }
+
+  .card img {
+    height: 200px;
   }
 }

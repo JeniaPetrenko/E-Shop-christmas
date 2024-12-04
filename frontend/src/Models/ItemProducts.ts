@@ -2,7 +2,9 @@ export interface ItemProducts {
   id: string;
   name: string;
   price: number;
+  quantity: number;
+  url: string;
+  img: string;
   description: string;
-  image: string;
-  category: string;
+  category: number;
 }
