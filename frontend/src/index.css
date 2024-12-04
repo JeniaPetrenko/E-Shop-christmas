@@ -5,9 +5,10 @@
   /* Основний колір */
   --secondary-color: #f1c40f;
   /* Колір акценту */
-  --background-color: #01012e;
+  --background-color: #021d18;
   /* Темний фон */
-  --card-background-color: #151362;
+  --card-background-color: #0c3028;
+  --card-hover-background: #053c32;
   /* Колір фону карток */
   --text-color: #f4f4f4;
   /* Колір тексту */
@@ -135,6 +136,7 @@ main {
 .card:hover {
   transform: translateY(-5px);
   box-shadow: 0 4px 10px var(--shadow-color);
+  background-color: var(--card-hover-background);
 }
 
 .card-body .btn {

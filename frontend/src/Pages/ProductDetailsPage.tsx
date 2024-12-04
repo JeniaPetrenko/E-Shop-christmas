@@ -36,8 +36,6 @@ export const ProductDetailsPage = () => {
 
   return (
     <>
-      <div className="overlay"></div>
-
       <section className="details">
         <div>
           <img src={product.img} alt={product.name} />
