@@ -5,11 +5,13 @@ import productsRouter from "./routes/products-routes.mjs";
 
 dotenv.config();
 
-const PORT = process.env.PORT || 5001;
+const PORT = process.env.PORT || 5002;
 const app = express();
 
 app.use(express.json());
 app.use(cors());
+
+// Підключення маршрутів
 app.use("/api/products", productsRouter);
 
 app.get("/", (req, res) => {

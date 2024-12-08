@@ -2,7 +2,7 @@ import axios from "axios";
 import { ItemProducts } from "../Models/ItemProducts";
 
 // Базовий URL для API
-const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5002";
+const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5003";
 
 //get all products from backend
 export const LoadProducts = async (

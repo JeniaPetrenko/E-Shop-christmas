@@ -5,8 +5,7 @@ import {
 } from "../controllers/products-controller.mjs";
 
 const router = express.Router();
-
-router.route("/").get(listProducts);
-router.route("/:id").get(findProduct);
+router.route("/").get(listProducts); // Для отримання всіх продуктів
+router.route("/:id").get(findProduct); // Для отримання продукту за ID
 
 export default router;
