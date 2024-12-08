@@ -7,6 +7,8 @@ type ImageLinkProps = {
 };
 
 const ImageLink = ({ imageSrc, altText, href }: ImageLinkProps) => {
+  // Обробник помилки для зображення (якщо воно не завантажується)
+
   return (
     <NavLink to={href}>
       {/* Виведення картинки товару, яка буде обгорнута посиланням */}

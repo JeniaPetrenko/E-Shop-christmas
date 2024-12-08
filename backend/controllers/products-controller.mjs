@@ -48,7 +48,7 @@ export const findProduct = async (req, res) => {
     if (!product) {
       return res
         .status(404)
-        .json({ success: false, message: `Product with ID ${id} not found` });
+        .json({ success: false, message: `Product with${id} ID not found` });
     }
 
     // Мапимо знайдений продукт на модель

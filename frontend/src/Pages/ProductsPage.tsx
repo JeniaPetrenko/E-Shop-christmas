@@ -5,15 +5,25 @@ import { ItemProducts } from "../Models/ItemProducts";
 
 export const ProductsPage = () => {
   const [products, setProducts] = useState<ItemProducts[]>([]);
+  const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
     const getProducts = async () => {
-      const data = await LoadProducts("/products");
-      setProducts(data);
+      try {
+        const data = await LoadProducts("/products");
+        setProducts(data);
+      } catch (error) {
+        setError("Failed to load products. Please try again later.");
+        console.error("Error fetching products:", error);
+      }
     };
 
     getProducts();
   }, []);
+
+  if (error) {
+    return <div>{error}</div>;
+  }
 
   return (
     <div className="products-page">

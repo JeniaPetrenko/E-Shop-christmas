@@ -4,7 +4,7 @@ export interface ItemProducts {
   price: number;
   quantity: number;
   url: string;
-  img: string;
+  image: string;
   description: string;
   category: number;
 }

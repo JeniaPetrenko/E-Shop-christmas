@@ -15,11 +15,16 @@ export const ProductDetailsPage = () => {
         return;
       }
 
-      const productData = await getProduct(Number(id));
-      if (productData) {
-        setProduct(productData);
-      } else {
-        setError("Product not found.");
+      try {
+        const productData = await getProduct(Number(id));
+        if (productData) {
+          setProduct(productData);
+        } else {
+          setError("Product not found.");
+        }
+      } catch (error) {
+        console.error("Error fetching product:", error);
+        setError("Error fetching product data.");
       }
     };
 
@@ -35,18 +40,16 @@ export const ProductDetailsPage = () => {
   }
 
   return (
-    <>
-      <section className="details">
-        <div>
-          <img src={product.img} alt={product.name} />
-        </div>
-        <div className="details-info">
-          <h2>{product.name}</h2>
-          <p className="price">Price: ${product.price}</p>
-          <p className="category">Category: {product.category}</p>
-          <p>Description: {product.description}</p>
-        </div>
-      </section>
-    </>
+    <section className="details">
+      <div>
+        <img src={product.image} alt={product.name} />
+      </div>
+      <div className="details-info">
+        <h2>{product.name}</h2>
+        <p className="price">Price: ${product.price}</p>
+        <p className="category">Category: {product.category}</p>
+        <p>Description: {product.description}</p>
+      </div>
+    </section>
   );
 };
